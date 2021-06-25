@@ -8,7 +8,7 @@ export default function Navigation() {
       <Container>
         <nav className="flex justify-between items-center">
           <div className="logo">
-            <Link to="/" className="text-3xl italic font-thin">
+            <Link to="/" className="text-3xl italic font-bold">
               Logo
             </Link>
           </div>
