@@ -1,7 +1,5 @@
 export default function RegisterForm({
   handleSubmit,
-  name,
-  setName,
   email,
   setEmail,
   password,
@@ -18,19 +16,6 @@ export default function RegisterForm({
   return (
     <section className="text-gray-600 body-font relative">
       <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name" className={Classes.labCla}>
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className={Classes.inpCla}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
         <div className="mb-4">
           <label htmlFor="email" className={Classes.labCla}>
             Email
@@ -57,8 +42,15 @@ export default function RegisterForm({
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="p-2 w-full">
-          <button className={Classes.btnCla}>Register</button>
+        <div className={`p-2 w-full`}>
+          <button
+            className={`${Classes.btnCla} ${
+              password.length < 6 ? "cursor-wait" : ""
+            }`}
+            disabled={!email || !password}
+          >
+            Login
+          </button>
         </div>
       </form>
     </section>
